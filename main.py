@@ -21,11 +21,23 @@ i=2
 j=2
 t=0
 #####Window is our Main frame of system
-window = tk.Tk()
-window.title("Face Recognition based Student Attendance System")
-window.geometry('1280x720')
-window.configure(bg="#909497")
 
+window = tk.Tk()
+window.title("Face Recognition based Attendance System")
+window.geometry('1280x720')
+window.configure(bg="#B96985")
+#making Full screen as Default
+# root = Tk()
+# window.attributes("-fullscreen", True)
+#Title of the window
+window.title('Bank Management System')
+# add widgets here
+ 
+
+#Heading Configurations
+hed = Label(window, text = "Face Recognition based Attendance System", bg = "#AD2F5B",fg="#e9ecef",font="Times 40")
+#placing the widget on the screen
+hed.pack(fill=X)
 # Setting icon of master window
 ############googlesheet API########
 
@@ -244,16 +256,16 @@ lbl2.place(x=200, y=300)
 txt2 = tk.Entry(window, width=20, fg="red", font=('times', 20, 'italic bold '))
 txt2.place(x=550, y=310)
 
-takeImg = tk.Button(window, text="Take Images",command=take_img,fg="black", bg="#00bfff"  ,width=20  ,height=2, activebackground = "Red" ,font=('times', 20, 'italic bold '))
+takeImg = tk.Button(window, text="Capture Images",command=take_img,fg="black", bg="#DDA0DD"  ,width=20  ,height=2, activebackground = "Red" ,font=('times', 20, 'italic bold '))
 takeImg.place(x=165, y=500)
 
-trainImg = tk.Button(window, text="Train Images",fg="black",command=trainimg ,bg="#00bfff"  ,width=20  ,height=2, activebackground = "Red",font=('times', 20, 'italic bold '))
+trainImg = tk.Button(window, text="Train Model",fg="black",command=trainimg ,bg="#DDA0DD"  ,width=20  ,height=2, activebackground = "Red",font=('times', 20, 'italic bold '))
 trainImg.place(x=510, y=500)
 
-trackImg = tk.Button(window, text="Track Images",fg="black",command=TrackImages ,bg="#00bfff"  ,width=20  ,height=2, activebackground = "Red",font=('times', 20, 'italic bold '))
+trackImg = tk.Button(window, text="Detect Images",fg="black",command=TrackImages ,bg="#DDA0DD"  ,width=20  ,height=2, activebackground = "Red",font=('times', 20, 'italic bold '))
 trackImg.place(x=855, y=500)
 
-viewAttendSpread_sheet = tk.Button(window, text="View Attendance",fg="black",command=view_attendenceSpread ,bg="#00bfff"  ,width=20  ,height=2, activebackground = "Red",font=('times', 20, 'italic bold '))
+viewAttendSpread_sheet = tk.Button(window, text="View Attendance",fg="black",command=view_attendenceSpread ,bg="#DDA0DD"  ,width=20  ,height=2, activebackground = "Red",font=('times', 20, 'italic bold '))
 viewAttendSpread_sheet.place(x=510, y=610)
 """
 ##########try Button#######
