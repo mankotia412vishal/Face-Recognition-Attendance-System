@@ -26,19 +26,43 @@ window = tk.Tk()
 window.title("Face Recognition based Attendance System")
 window.geometry('1280x720')
 window.configure(bg="#B96985")
-#making Full screen as Default
-# root = Tk()
-# window.attributes("-fullscreen", True)
-#Title of the window
-window.title('Bank Management System')
-# add widgets here
- 
 
 #Heading Configurations
 hed = Label(window, text = "Face Recognition based Attendance System", bg = "#AD2F5B",fg="#e9ecef",font="Times 40")
 #placing the widget on the screen
 hed.pack(fill=X)
 # Setting icon of master window
+# add widgets here
+ 
+# try:
+#     import Tkinter as tkinter
+# except:
+#     import tkinter
+# from PIL import Image, ImageTk
+
+def updatewindow(imagen):
+    # resize the image to fill the whole screen
+    pilImage = Image.open(imagen)
+    w, h = window.winfo_screenwidth(), window.winfo_screenheight()
+    image = ImageTk.PhotoImage(pilImage.resize((w,h)))
+    # update the image
+    canvas.itemconfig(imgbox, image=image)
+    # need to keep a reference of the image, otherwise it will be garbage collected
+    canvas.image = image
+
+# window =  tk.Tk()
+# window.attributes('-fullscreen', 1)
+window.bind('<Escape>', lambda _: window.destroy())
+
+canvas = tk.Canvas(window, highlightthickness=0)
+canvas.pack(fill=tk.BOTH, expand=1)
+imgbox = canvas.create_image(0, 0, image=None, anchor='nw')
+
+# show the first image
+updatewindow('pandu55.jpeg')
+# change the image 5 seconds later
+window.after(5000, updatewindow, 'pandu55.jpeg')
+
 ############googlesheet API########
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
@@ -269,10 +293,10 @@ viewAttendSpread_sheet = tk.Button(window, text="View Attendance",fg="black",com
 viewAttendSpread_sheet.place(x=510, y=610)
 """
 ##########try Button#######
-# root = tk.Tk()
-# root.geometry("300x300")
-# root.tk_setPalette("black")
-# btn_frame = tk.Frame(root)
+# window = tk.Tk()
+# window.geometry("300x300")
+# window.tk_setPalette("black")
+# btn_frame = tk.Frame(window)
 canvas = tk.Canvas( height=100, width=100)
 canvas.pack()
 
