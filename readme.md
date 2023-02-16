@@ -14,10 +14,6 @@ pip install face_recognition
 <li>If any command doesn't work then do this the again install it</li>
 pipwin refresh
 </pre>
-### Installation
-1. Clone the repo
-## instructions for running this project
-  
 
 <pre>
 ## Creater of the project
@@ -27,3 +23,5 @@ Student- Vishwakarma institute of the technology(pune)
 Branch - IT
  
 </pre>
+
+![image](https://user-images.githubusercontent.com/90970004/219338296-73eae040-2b2e-4078-894a-637cccfca05f.png)
